@@ -1,0 +1,59 @@
+[[_id1695e0706sp]]
+= Build QMF Files 
+
+== Purpose
+
+This is an optional z/OS Phase.
+
+Used to generate the property file for the QMF DB2 files, mainly about the QMF owner to be used for deployments.
+
+== Usage
+
+The _Build QMF Files_ Phase can be used on Build Environments. 
+
+This Phase is dependent on the <<PromotionComponentsLoadModules.adoc#_id1695e0706y6,Promotion of components and load-modules>> Phase.
+
+== Parameters
+
+[cols="1,1,1,1", frame="topbot", options="header"]
+|===
+| Parameter
+| Mandatory/Optional
+| Description
+| Default Value
+
+|alm.phase.builder
+|M
+|
+|
+
+|alm.phase.extractBundle
+|M
+|
+|true
+
+|alm.phase.mainScript
+|M
+|z/OS QMF Files Build
+|zosQmfBuild.xml
+
+|dir.zosModels
+|O
+|Models Location
+|$$.$$/models
+
+|dir.zosResources
+|O
+|Property files Location
+|$$.$$/resources
+
+|project.objtypes
+|O
+|List of Object Types to select
+|ALL
+
+|propsfile.objtypes
+|O
+|Global Object Types file to use
+|$$.$$/resources/globalObjtypes.properties
+|===
