@@ -6,18 +6,18 @@ Click the name of one of the Phases in the table below to display all detailed i
 
 [cols="1,1,1,1", frame="topbot", options="header"]
 |===
-| Build Phase
+| Phase
 | M/O
 | Environment
 | Explanation
 
-|<<ProperyFilesBuild.adoc#_id1695e070656,Build Property Files>>
+|<<ProperyFilesCreate.adoc#_id1695e070656,Create Property Files>>
 |O
 |Build
 |Used to generate property files.
 This phase is only used for non-compiled source files needing specific property files. 
 
-|<<QMFFilesBuild.adoc#_id1695e0706sp,Build QMF Files>>
+|<<QMFFilesCreate.adoc#_id1695e0706sp,Create QMF Property Files>>
 |O
 |Build
 |Used to generate the property file for the QMF DB2 files.
@@ -27,7 +27,7 @@ This phase is only used for non-compiled source files needing specific property 
 |Deploy
 |Used to generate PHASEIN CICS commands and to submit them for activating CICS load module files (maps and programs).
 
-|<<CollectIdemsComponents.adoc#_id1695df00qvl,Collect Idms Components>>
+|<<CollectIdmsComponents.adoc#_id1695df00qvl,Collect Idms Components>>
 |O
 |Build
 |Used to collect IDMS components. 
@@ -69,6 +69,11 @@ The associated files (Load-modules, listing, dbrm, bind files) will also be dele
 |Deploy
 |Used to delete the z/OS files in the PDSs of the Target environment using the Un-deployment option after a bad Promotion.
 
+|<<JclsSubmissionOnJES.adoc#_jcls_submission_on_jes,Jcls submission on JES>>
+|O
+|Deploy
+|Used for submitting the JCLs of a PDS from files list or from target Jes files to JES.
+
 |<<JmanJmodelsControl.adoc#_id1695e0704nk,Jman Jmodels Control>>
 |O
 |Build
@@ -78,6 +83,11 @@ The associated files (Load-modules, listing, dbrm, bind files) will also be dele
 |O
 |Deploy
 |Used to copy and generate JCL execution file to deploy the Jmodels in the z/OS environments from logical JMAN targets.
+
+|<<JobsSubmissionUsingProgramProperties.adoc#_jobs_submission_using_program_properties,Jobs Submission using Program properties>>
+|O
+|Deploy
+|Used for submitting JOBs with property file of programs from target Job files to JES using models for getting listings and control.
 
 |<<ListFilesFromLocation.adoc#_id16cnb0n0278,List Files from location to CSV or Excel file>>
 |O
@@ -112,15 +122,15 @@ This is done per object type based on the Environment parameters, e.g., the firs
 |Deploy
 |Used to submit a JCL for moving components from Stage to Target Endevor Environment.
 
-|<<IdmsCompoenentsPromotion.adoc#_id1695k0f0377,Promote Idms components>>
+|<<IdmsComponentsPromotion.adoc#_id1695k0f0377,Promote Idms components>>
 |O
 |Deploy
 |Used to transfer component files to z/OS and to update the target dictionary with the different types of IDMS components loaded with the generated JCL.
 i.e., Idmsdddl, Rhdcmap, Schema and Subschema.
 Next, the JCL runs the DCMT statements for new copies.
 
-|<<PromotionComponentsLoadModules.adoc#_id1695e0706y6,Promotion of components and load-modules>>
-|M
+|<<PromotionComponentsLoadModules.adoc#_id1695e0706y6,Promote of components and load-modules>>
+|O
 |Deploy
 |Copies the z/OS files selected from the Environment Target to their respective z/OS PDSs.
 The load-modules are copied to temporary sequential files and the script creates and submits a JCL for receiving them in their PDSs.

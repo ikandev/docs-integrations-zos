@@ -1,5 +1,5 @@
 [[_id1695k0k0ijd]]
-= Copy from Source to Target
+= Copy from Source folder to Target folder
 
 == Purpose
 
@@ -12,15 +12,15 @@ It may be used for copying FROM and TO other locations if required.
 
 [NOTE]
 ====
-For IDMS objects, the <<CollectIdemsComponents.adoc#_id1695df00qvl,Collect Idms Components>> Phase may be used on the Build process and the <<IdmsCompoenentsPromotion.adoc#_id1695k0f0377,Promote Idms components>> Phase on the Deploy Process instead of this Phase.
+For IDMS objects, the <<CollectIdmsComponents.adoc#_id1695df00qvl,Collect Idms Components>> Phase may be used on the Build process and the <<IdmsComponentsPromotion.adoc#_id1695k0f0377,Promote Idms components>> Phase on the Deploy Process instead of this Phase.
 ====
 
 == Usage
 
-The _Copy from Source to Target_ Phase can be used on Build and Deploy Environments.
+The _Copy from Source folder to Target folder_ Phase can be used on Build and Deploy Environments.
 This Phase is mandatory.
 
-* On the __Build Environment__, this phase must precede the two other mandatory Build Phases: _Copy Sources Before Compilation_ and __Maps and Programs compilation__.
+* On the __Build Environment__, this phase must precede the two other mandatory Build Phases: _Copy Sources to PDS for Compilation a_ and __Maps and Programs compilation__.
 * On the __Deploy Environment__, this Phase can be inserted wherever required in the lifecycle.
 
 
@@ -45,7 +45,7 @@ This Phase is mandatory.
 
 |alm.phase.mainScript
 |M
-|z/OS Copy from Source to Target
+|z/OS Copy from Source folder to Target folder
 |zosCopySourceToTarget.xml
 
 |cleanTarget
@@ -61,7 +61,7 @@ This Phase is mandatory.
 |dir.zosResources
 |O
 |Property files Location
-|$$.$$/resources
+|[alm_system]/[Machine]/PhaseResources
 
 |excludedFiles
 |O
@@ -91,7 +91,7 @@ This Phase is mandatory.
 |propsfile.objtypes
 |O
 |Global Object Types file to use
-|$$.$$/resources/globalObjtypes.properties
+|${dir.zosResources}/globalObjtypes.properties
 
 |setAllComponents
 |O

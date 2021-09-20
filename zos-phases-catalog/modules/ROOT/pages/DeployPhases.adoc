@@ -44,7 +44,15 @@ Click the name of one of the Phases in the table below to display all detailed i
 |<<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy from Source to Target>>
 
 |O
+|<<JclsSubmissionOnJES.adoc#_jcls_submission_on_jes,Jcls submission on JES>>
+|<<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy from Source to Target>>
+
+|O
 |<<JmanJmodelsDeployment.adoc#_id1695e07050q,Jman Jmodels Deployment>>
+|<<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy from Source to Target>>
+
+|O
+|<<JobsSubmissionUsingProgramProperties#_jobs_submission_using_program_properties,Jobs Submission using Program properties>>
 |<<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy from Source to Target>>
 
 |O
@@ -64,7 +72,7 @@ Click the name of one of the Phases in the table below to display all detailed i
 |<<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy from Source to Target>>
 
 |O
-|<<IdmsCompoenentsPromotion.adoc#_id1695k0f0377,Promote Idms components>>
+|<<IdmsComponentsPromotion.adoc#_id1695k0f0377,Promote Idms components>>
 |/
 
 |O

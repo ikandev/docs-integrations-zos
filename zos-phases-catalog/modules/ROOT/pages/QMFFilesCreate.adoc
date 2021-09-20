@@ -1,5 +1,5 @@
 [[_id1695e0706sp]]
-= Build QMF Files 
+= Create QMF Property Files 
 
 == Purpose
 
@@ -9,9 +9,9 @@ Used to generate the property file for the QMF DB2 files, mainly about the QMF o
 
 == Usage
 
-The _Build QMF Files_ Phase can be used on Build Environments. 
+The _Create QMF Property Files_ Phase can be used on Build Environments. 
 
-This Phase is dependent on the <<PromotionComponentsLoadModules.adoc#_id1695e0706y6,Promotion of components and load-modules>> Phase.
+This Phase is dependent on the <<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy from Source to Target>> Phase.
 
 == Parameters
 
@@ -34,18 +34,18 @@ This Phase is dependent on the <<PromotionComponentsLoadModules.adoc#_id1695e070
 
 |alm.phase.mainScript
 |M
-|z/OS QMF Files Build
+|z/OS Create QMF Files
 |zosQmfBuild.xml
 
 |dir.zosModels
 |O
 |Models Location
-|$$.$$/models
+|[alm_system]/[Machine]/PhaseModels 
 
 |dir.zosResources
 |O
 |Property files Location
-|$$.$$/resources
+|[alm_system]/[Machine]/PhaseResources 
 
 |project.objtypes
 |O
@@ -55,5 +55,5 @@ This Phase is dependent on the <<PromotionComponentsLoadModules.adoc#_id1695e070
 |propsfile.objtypes
 |O
 |Global Object Types file to use
-|$$.$$/resources/globalObjtypes.properties
+|${dir.zosResources}/globalObjtypes.properties
 |===

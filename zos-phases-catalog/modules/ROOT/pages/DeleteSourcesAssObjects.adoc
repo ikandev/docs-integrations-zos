@@ -44,15 +44,15 @@ The _Delete Sources and their associated objects_ Phase can be used on Deploy En
 |Suffix used for files to delete.
 |to_be_deleted
 
+|dir.zosModels
+|O
+|Models Location
+|[alm_system]/[Machine]/PhaseModels 
+
 |dir.zosResources
 |O
 |Property files Location
-|$$.$$/resources
-
-|ftp.active
-|O
-|Option for transmitting to z/OS (true or false)
-|true
+|[alm_system]/[Machine]/PhaseResources 
 
 |project.objtypes
 |O
@@ -62,17 +62,17 @@ The _Delete Sources and their associated objects_ Phase can be used on Deploy En
 |propsfile.environment
 |O
 |Property File of z/OS environment
-|$$.$$/resources/environment.properties
+|${dir.zosResources}/environment_deploy.properties
 
 |propsfile.objtypes
 |O
 |Global Object Types file to use
-|$$.$$/resources/globalObjtypes.properties
+|${dir.zosResources}/globalObjtypes.properties
 
 |propsfile.parmsFTP
 |O
-|Property File of z/OS FTP system
-|$$.$$/resources/parmsFTP.properties
+|Property File of z/OS FTP or MFDASsystem
+|${dir.zosResources}/parmsFTPZOS.properties
 
 |stopOnError
 |O

@@ -40,12 +40,12 @@ This Phase is dependent on the <<PromotionComponentsLoadModules.adoc#_id1695e070
 |dir.zosModels
 |O
 |Models Location
-|$$.$$/models
+|[alm_system]/[Machine]/PhaseModels 
 
 |dir.zosResources
 |O
 |Property files Location
-|$$.$$/resources
+|[alm_system]/[Machine]/PhaseResources
 
 |env.lib.service
 |M
@@ -64,14 +64,12 @@ This Phase is dependent on the <<PromotionComponentsLoadModules.adoc#_id1695e070
 
 |option.active
 |M
-|Option activated for now (i.e.
-${service.active} in environment)
+|Option activated for now (i.e. ${service.active} in environment)
 |true
 
 |option.code
 |M
-|Code of option (i.e.
-SERVICE:YES) in object-type to select
+|Code of option (i.e. SERVICE:YES) in object-type to select
 |XXX
 
 |option.function
@@ -97,5 +95,5 @@ SERVICE:YES) in object-type to select
 |propsfile.objtypes
 |O
 |Global Object Types file to use
-|$$.$$/resources/globalObjtypes.properties
+|${dir.zosResources}/ globalObjtypes.properties
 |===

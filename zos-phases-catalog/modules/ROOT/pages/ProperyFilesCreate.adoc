@@ -1,5 +1,5 @@
 [[_id1695e070656]]
-= Build Property Files 
+= Create Property Files 
 
 == Purpose
 
@@ -11,12 +11,12 @@ This phase is only used for non-compiled source files needing specific property 
 [NOTE]
 ====
 Except for QMF.
-See also the <<QMFFilesBuild.adoc#_id1695e0706sp,Build QMF Files>> Phase.
+See also the <<QMFFilesCreate.adoc#_id1695e0706sp,Create QMF Property Files>> Phase.
 ====
 
 == Usage
 
-The _Build Property Files_ Phase can be used on the Build Environment.
+The _Create Property Files_ Phase can be used on the Build Environment.
 
 This Phase is dependent on the <<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy from Source to Target>> Phase.
 
@@ -41,18 +41,18 @@ This Phase is dependent on the <<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy f
 
 |alm.phase.mainScript
 |M
-|z/OS Property Files Build
+|z/OS Create Property Files
 |zosPropertyBuild.xml
 
 |dir.zosModels
 |O
 |Models Location
-|$$.$$/models
+|[alm_system]/[Machine]/PhaseModels
 
 |dir.zosResources
 |O
 |Property files Location
-|$$.$$/resources
+|[alm_system]/[Machine]/PhaseResources
 
 |option.active
 |M
@@ -79,7 +79,7 @@ DCF:YES) in object-type to select
 |propsfile.objtypes
 |O
 |Global Object Types file to use
-|$$.$$/resources/globalObjtypes.properties
+|${dir.zosResources}/globalObjtypes.properties
 
 |subtool.model
 |O

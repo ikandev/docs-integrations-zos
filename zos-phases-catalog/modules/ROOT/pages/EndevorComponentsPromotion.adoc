@@ -42,17 +42,12 @@ This Phase is dependent on the <<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy f
 |dir.zosModels
 |O
 |Models Location
-|$$.$$/models
+|[alm_system]/[Machine]/PhaseModels 
 
 |dir.zosResources
 |O
 |Property files Location
-|$$.$$/resources
-
-|ftp.active
-|O
-|Option for transmitting to z/OS (true or false)
-|true
+|[alm_system]/[Machine]/PhaseResources
 
 |project.objtypes
 |O
@@ -62,17 +57,17 @@ This Phase is dependent on the <<CopyFromSourceTarget.adoc#_id1695k0k0ijd,Copy f
 |propsfile.environment
 |O
 |Property File of z/OS environment
-|$$.$$/resources/environment.properties
+|${dir.zosResources}/environment_deploy.properties
 
 |propsfile.objtypes
 |O
 |Global Object Types file to use
-|$$.$$/resources/globalObjtypes.properties
+|${dir.zosResources}/globalObjtypes.properties
 
 |propsfile.parmsFTP
 |O
-|Property File of z/OS FTP system
-|$$.$$/resources/parmsFTP.properties
+|Property File of z/OS FTP or MFDAS system
+|${dir.zosResources}/parmsFTPZOS.properties
 
 |stopOnError
 |O

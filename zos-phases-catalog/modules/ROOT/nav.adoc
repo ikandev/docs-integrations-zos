@@ -5,10 +5,10 @@
 * xref:DeployPhases.adoc[]
 
 .Phases
-* xref:ProperyFilesBuild.adoc[]
+* xref:ProperyFilesCreate.adoc[]
 * xref:QMFFilesBuild.adoc[]
 * xref:CicsLoadmodulesActivation.adoc[]
-* xref:CollectIdemsComponents.adoc[]
+* xref:CollectIdmsComponents.adoc[]
 * xref:CopyPDSMembersToPDS.adoc[]
 * xref:CopySourcesBeforeCompilation.adoc[]
 * xref:CopyFromSourceTarget.adoc[]
@@ -16,8 +16,10 @@
 * xref:DCFFilesDeployment.adoc[]
 * xref:DeleteSourcesAssObjects.adoc[]
 * xref:DemotionComponents.adoc[]
+* xref:JclsSubmissionOnJES.adoc[]
 * xref:JmanJmodelsControl.adoc[]
 * xref:JmanJmodelsDeployment.adoc[]
+* xref:JobsSubmissionUsingProgramProperties.adoc[]
 * xref:ListFilesFromLocation.adoc[]
 * xref:MapsProgramsCompilation.adoc[]
 * xref:PDSAllocationDeletion.adoc[]

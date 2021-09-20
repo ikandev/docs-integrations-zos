@@ -62,12 +62,12 @@ If required, this Phase may also be used for other locations.
 |dir.zosModels
 |O
 |Models Location
-|$$.$$/models
+|[alm_system]/[Machine]/PhaseModels 
 
 |dir.zosResources
 |O
 |Property files Location
-|$$.$$/resources
+|[alm_system]/[Machine]/PhaseResources
 
 |excel.fileName
 |O
@@ -113,7 +113,7 @@ Useful for concatenating lists in same CSV file
 |propsfile.objtypes
 |O
 |Global Object Types file to use
-|$$.$$/resources/globalObjtypes.properties
+|${dir.zosResources}/globalObjtypes.properties
 
 |setAllComponents
 |O
