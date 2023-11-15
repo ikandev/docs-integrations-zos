@@ -10,7 +10,7 @@
 
 This document explains how to install the Kobee Resource Configurator (KRC).
 
-KRC is a web application to edit and generate models and resources that are part of the Kobee DevOps solution for z/OS mainframe. These models and resources will be used by the z/OS solution Phases running on a Kobee Agent. The models are JCL model templates and the resouces properties that will be used by the models to compile and promote sources and their results to the mainframe.
+KRC is a web application to edit and generate models and resources that are part of the Kobee DevOps solution for z/OS mainframe. These models and resources will be used by the z/OS solution Phases running on a Kobee Agent. The models are JCL model templates and the resources are properties that will be used by the models to compile and promote sources and their results to the mainframe.
 
 image::Kobee-zos-architecture.png[,895,635] 
 
@@ -56,11 +56,11 @@ s|Min 100MB, recommended 250MB
 [[_bhbicaaj]]
 === Java 17
 
-KRC needs minimum an installed Java 17 JRE or a Java 17 JDK. It has been tested to run with Oracle Java, Adoptium Eclipse Temurin (formerly AdoptOpenJDK), Azul Zulu Builds of OpenJDK and OpenJDK on several Linux distros. Oracle Java can be obtained from Oracle's website for non-production environments using an Oracle account. Adoptium OpenJDK can be obtained from https://adoptium.net[https://adoptium.net,window=_blank] and Azul Zulu Builds of the OpenJDK from https://www.azul.com/downloads/?package=jdk[https://azul.com/downloads/?package=jdk,window=_blank].
+KRC needs an installed Java JRE or JDK of version 17 or higher. It has been tested to run with Oracle Java, Adoptium Eclipse Temurin (formerly AdoptOpenJDK), Azul Zulu Builds of OpenJDK and OpenJDK on several Linux distros. Oracle Java can be obtained from Oracle's website for non-production environments using an Oracle account. Adoptium OpenJDK can be obtained from https://adoptium.net[https://adoptium.net,window=_blank] and Azul Zulu Builds of the OpenJDK from https://www.azul.com/downloads/?package=jdk[https://azul.com/downloads/?package=jdk,window=_blank].
 
 === Database
 
-KRC uses an in memory database and does not require a preconfigured database. The database will be automatically created during installation in the _KRC_HOME/data_ directory. Database backups can be initiated from within KRC anytime and will be stored under _KRC_HOME/backup_.
+KRC uses an in-memory database and does not require a preconfigured database. The database will be automatically created during installation in the _KRC_HOME/data_ directory. Database backups can be performed on demand from within KRC and will be stored under _KRC_HOME/backup_.
 
 //TODO: For more information, consult xref:2.2@krc-getting-started-en:ROOT:GettingStarted.adoc[KRC Getting Started].
 
@@ -136,13 +136,13 @@ The port number the KRC application server listens on for incoming HTTPS request
 krc_tomcat_user_name
 |
 
-Only needed for linux installations. User name needed to install KRC as a daemon in `systemd` on linux distro's.
+Only needed for Linux installations. User name needed to install KRC as a daemon in `systemd` on Linux distro's.
 |
 
 krc_sudo_password
 |
 
-Only needed for linux installations. The sudo password needed for registrating the KRC Tomcat Web Application Container as a service in `systemd`.
+Only needed for Linux installations. The sudo password needed for registrating the KRC Tomcat Web Application Container as a service in `systemd`.
 |
 
 krc_encryption_password
@@ -190,7 +190,7 @@ The installation procedure will unpack and configure the necessary files in the 
 
 [NOTE]
 ====
-It is recommended to launch the installer from a command prompt, Powershell or Linux shell, to see the progress and the result of the installation. On Windows, if the installer is not run as an Administrator, a _User Account Control_ dialog will pop up asking 'Do you want to allow this app to make changes to your device', where this app is the _Apache Commons Daemon Service Runner_. Click _Yes_ so that the Service for stopping and starting KRC is correctly configured. On linux KRC will be registered as a daemon in `systemd` using the _krc_sudo_password_ configured in the _gradle.properties_.
+It is recommended to launch the installer from a command prompt, Powershell or Linux shell, to see the progress and the result of the installation. On Windows, if the installer is not run as an Administrator, a _User Account Control_ dialog will pop up asking 'Do you want to allow this app to make changes to your device', where this app is the _Apache Commons Daemon Service Runner_. Click _Yes_ so that the Service for stopping and starting KRC is correctly configured. On Linux, KRC will be registered as a daemon in `systemd` using the _krc_sudo_password_ configured in the _gradle.properties_.
 
 *The user running the installer should have write access to the _KRC_HOME_ location.*
 ====
@@ -210,7 +210,7 @@ To use the Kobee Resource Configurator, you need to make sure that the Windows s
 
 === Starting the Kobee Resource Configurator
 
-On Windows start the _Kobee Resource Configurator_ service in the `Services` app or execute following command in an Administrator Command Prompt :
+On Windows, start the _Kobee Resource Configurator_ service in the `Services` app or execute following command in an Administrator Command Prompt :
 
 [source]
 ----
@@ -237,7 +237,7 @@ Log in with user id "`global`", password "`global`". For information about the s
 
 === Stopping the Kobee Resource Configurator
 
-On Windows stop the _Kobee Resource Configurator_ service in the `Services` app or execute following command in an Administrator Command Prompt :
+On Windows, stop the _Kobee Resource Configurator_ service in the `Services` app or execute following command in an Administrator Command Prompt :
 
 [source]
 ----
@@ -259,7 +259,7 @@ First stop the KRC Windows service or Linux daemon (see <<Stopping the Kobee Res
 
 [NOTE]
 ====
-It is recommended to launch the uninstaller from a command prompt, Powershell or Linux shell, to see the progress and the result of the uninstallation. On Windows, if the uninstaller is not run as an Administrator, a _User Account Control_ dialog will pop up asking 'Do you want to allow this app to make changes to your device', where this app is the _Apache Commons Daemon Service Runner_. Click _Yes_ so that the Service for stopping and starting KRC is correctly removed. On linux the KRC daemon will be removed from `systemd` using the _krc_sudo_password_ configured in the _gradle.properties_.
+It is recommended to launch the uninstaller from a command prompt, Powershell or Linux shell, to see the progress and the result of the uninstallation. On Windows, if the uninstaller is not run as an Administrator, a _User Account Control_ dialog will pop up asking 'Do you want to allow this app to make changes to your device', where this app is the _Apache Commons Daemon Service Runner_. Click _Yes_ so that the Service for stopping and starting KRC is correctly removed. On Linux, the KRC daemon will be removed from `systemd` using the _krc_sudo_password_ configured in the _gradle.properties_.
 
 *The user running the uninstaller should have write access to the _KRC_HOME_ location.*
 ====
@@ -293,7 +293,7 @@ For safety reasons, it is highly recommended to back up the entire _KRC_HOME_ di
 
 === KRC Upgrade Procedure
 
-. Stop the KRC service or daemon, refer to <<Stopping the Kobee Resource Configurator>>.
+. Stop the KRC service or daemon. Refer to <<Stopping the Kobee Resource Configurator>>.
 
 . Make the necessary backups.
 
@@ -309,7 +309,7 @@ By default, the upgrade scripts use the java executable that is available on the
 
 [NOTE]
 ====
-It is recommended to launch the upgrade script from a command prompt, Powershell or Linux shell, to see the progress and the result of the upgrade. On Windows, if the upgrade script is not run as an Administrator, a _User Account Control_ dialog will pop up twice asking 'Do you want to allow this app to make changes to your device', where this app is the _Apache Commons Daemon Service Runner_. Click _Yes_ so that the Service for stopping and starting KRC is correctly removed and reinstalled. On linux the KRC daemon will be removed from and installed in `systemd` using the _krc_sudo_password_ configured in the _gradle.properties_.
+It is recommended to launch the upgrade script from a command prompt, Powershell or Linux shell, to see the progress and the result of the upgrade. On Windows, if the upgrade script is not run as an Administrator, a _User Account Control_ dialog will pop up twice asking 'Do you want to allow this app to make changes to your device', where this app is the _Apache Commons Daemon Service Runner_. Click _Yes_ so that the Service for stopping and starting KRC is correctly removed and reinstalled. On Linux the KRC daemon will be removed from and installed in `systemd` using the _krc_sudo_password_ configured in the _gradle.properties_.
 
 *The user running the upgrade script should have write access to the _KRC_HOME_ location.*
 ====
@@ -402,7 +402,7 @@ spring.security.user.name=global
 spring.security.user.password=global
 ----
 
-This security system can be maintained in production if one user qualifies, but we recommend changing the user and password, for example as follows.
+This security system can be maintained in production if having only one user is sufficient, but we recommend changing the user and password, for example as follows.
 
 [source]
 ----
@@ -417,9 +417,9 @@ For security reasons the password of the _kobee_ user has been encrypted, see <<
 
 KRC authentication and authorization can also be configured by setting up a (secure) ldap connection. In order to do this you have to perform following steps:
 
-. Stop the KRC Windows service or linux daemon
+. Stop the KRC Windows service or Linux daemon
 +
-On Windows stop the _Kobee Resource Configurator_ service in the `Services` app or execute following command in an Administrator Command Prompt :
+On Windows, stop the _Kobee Resource Configurator_ service in the `Services` app or execute following command in an Administrator Command Prompt :
 +
 [source]
 ----
@@ -435,7 +435,7 @@ sudo systemctl stop krctomcat
 +
 . Change the settings in the _KRC_HOME/appserver/apache-tomcat-${version}/webapps/krc/WEB-INF/classes/application.properties_ file
 +
-Import the _spring-ldap-security.properties_ file by hashing and unhashing the correct import lines as follows:
+Import the _spring-ldap-security.properties_ file by commenting and uncommenting (using #) the correct import lines as follows:
 +
 [source]
 ----
@@ -451,9 +451,9 @@ spring.config.import=spring-jpa.properties,spring-ldap-security.properties,optio
 +
 . In case of ldaps, make sure the certificate is added to the trusted certificates of the Java jre, using the Java _keytool_ program.
 +
-. start the KRC Windows service or linux daemon
+. Start the KRC Windows service or Linux daemon
 +
-Use the Services application on Windows and start the _Kobee Resource Configurator_ service, or excute the commands _net start krctomcat_ (Windows) or _sudo systemctl stop krctomcat_ (Linux `systemd`) as explained above.
+Use the Services application on Windows and start the _Kobee Resource Configurator_ service, or excute the commands _net start krctomcat_ (Windows) or _sudo systemctl start krctomcat_ (Linux `systemd`) as explained above.
 
 Configure the following properties in the _KRC_HOME/appserver/apache-tomcat-${version}/webapps/krc/WEB-INF/classes/spring-ldap-security.properties_ file :
 
@@ -474,19 +474,19 @@ In case of ldaps, make sure the certificate is added to the trusted certificates
 krc.ldap.base
 |
 
-The Base DN where ldap searches for Users will start. Sample value _DC-emample,DC=com_.
+The Base DN where ldap searches for Users will start. Sample value _DC=example,DC=com_.
 |
 
 krc.ldap.subtreesearch
 |
 
-Allow subtreesearch. If set to true, a subtree scope search will be performed. If false a single-level search is used.
+Allow subtree search. If set to true, a subtree scope search will be performed. If false, a single-level search is used.
 |
 
 krc.ldap.referral
 |
 
-Defines the strategy with which to handle referrals. Possible values: _ignore_, _follow_ and _throw_.
+Defines the strategy to handle referrals. Possible values: _ignore_, _follow_ and _throw_.
 |
 
 krc.ldap.password
@@ -504,13 +504,13 @@ The searchFilter for finding users in the ldap. For example: _(uid={0})_ - this 
 krc.ldap.groupSearchBase
 |
 
-The group search is performed within a DN specified by the groupSearchBase property, which should be relative to the root DN of its ContextSource. If this is an empty string searching starts from the root. Sample value _OU=groups,DC=example,DC=com_.
+The group search is performed within a DN specified by the groupSearchBase property, which should be relative to the root DN of its ContextSource. If this is an empty string, searching starts from the root. Sample value _OU=groups,DC=example,DC=com_.
 |
 
 krc.ldap.groupSearchFilter
 |
 
-The pattern to be used for the user search being member of a group. {0} is the user's DN.
+The pattern to use for determining whether the user is a member of the group. {0} is the user's DN.
 Example: _(member={0})_, or _(\|(sAMAccountName={1})(member={0}))_ for user member search in an Active Directory. 
 |
 
@@ -523,18 +523,18 @@ Defines whether read-only operations are performed by using an anonymous (unauth
 krc.ldap.adminAuthorities
 |
 
-Authority or comma separated list of authorities that have access to KRC. Example: _ADMIN_, or _ADMIN_KRC,ADMINALM_.
+Authority or comma separated list of authorities that have access to KRC. Example: _ADMIN_, or _ADMIN_KRC,ADMIN_KOBEE_.
 |===
 
-As with the default security user and password must be entered on the standard KRC login screen. In this case, a user and password that allow connection to the ldap system.
+When using this security configuration, users can log in to KRC using their ldap or Active Directory credentials.
 
 === AAD Security: Microsoft Entra ID security, also known as Azure Active Directory
 
-KRC authentication and authorization can also be configured by setting up a connection to a Azure Active Directory (Azure AD or Entra ID). In order to do this you have to perform following steps:
+KRC authentication and authorization can also be configured by setting up a connection to Azure Active Directory (Azure AD or Entra ID). In order to do this you have to perform following steps:
 
-. Stop the KRC Windows service or linux daemon
+. Stop the KRC Windows service or Linux daemon
 +
-On Windows stop the _Kobee Resource Configurator_ service in the `Services` app or execute following command in an Administrator Command Prompt :
+On Windows, stop the _Kobee Resource Configurator_ service in the `Services` app or execute following command in an Administrator Command Prompt :
 +
 [source]
 ----
@@ -550,7 +550,7 @@ sudo systemctl stop krctomcat
 +
 . Change the settings in the _KRC_HOME/appserver/apache-tomcat-${version}/webapps/krc/WEB-INF/classes/application.properties_ file
 +
-Import the _spring-aad-security.properties_ file by hashing and unhashing the correct import lines as follows:
+Import the _spring-aad-security.properties_ file by commenting and uncommenting (using #) the correct import lines as follows:
 +
 [source]
 ----
@@ -564,9 +564,9 @@ spring.config.import=spring-jpa.properties,spring-aad-security.properties,option
 +
 . Configure the Azure AD/Entry ID properties in the _KRC_HOME/appserver/apache-tomcat-${version}/webapps/krc/WEB-INF/classes/spring-aad-security.properties_ file. See the table below for more info on these properties
 +
-. start the KRC Windows service or linux daemon
+. Start the KRC Windows service or Linux daemon
 +
-Use the Services application on Windows and start the _Kobee Resource Configurator_ service, or excute the commands _net start krctomcat_ (Windows) or _sudo systemctl stop krctomcat_ (Linux `systemd`) as explained above.
+Use the Services application on Windows and start the _Kobee Resource Configurator_ service, or excute the commands _net start krctomcat_ (Windows) or _sudo systemctl start krctomcat_ (Linux `systemd`) as explained above.
 
 Configure the following properties in the _KRC_HOME/appserver/apache-tomcat-${version}/webapps/krc/WEB-INF/classes/spring-aad-security.properties_ file :
 
@@ -586,19 +586,19 @@ Enable the features provided by spring-cloud-azure-starter-active-directory.
 spring.cloud.azure.active-directory.profile.tenant-id
 |
 
-Contains the Active Directory's Directory ID. Sample value _22222222-2222-2222-2222-222222222222_.
+Contains the Active Directory's Tenant ID. Sample value _22222222-2222-2222-2222-222222222222_.
 |
 
 spring.cloud.azure.active-directory.credential.client-id
 |
 
-Contains the Application ID from your app registration. Sample value _11111111-1111-1111-1111-1111111111111111_.
+Contains the Application ID of your app registration. Sample value _11111111-1111-1111-1111-1111111111111111_.
 |
 
 spring.cloud.azure.active-directory.credential.client-secret
 |
 
-Contains the Client Secret key from your app registration. For security reasons this secret key may be encrypted, see <<_encryptingpasswords>> on how to do this.
+Contains the Client Secret value of your app registration. For security reasons, this value may be encrypted, see <<_encryptingpasswords>> on how to do this.
 |
 
 krc.security.aad.role_admin
@@ -609,7 +609,7 @@ The Role that defines admin access in KRC from your app registration. Sample val
 
 See also following article for more info about these Entra ID connection properties:  https://learn.microsoft.com/en-us/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory.
 
-When trying to reach the default KRC starting page (for example `\http://myhost:8082/krc`) it will redirect to the Microsoft Entra sign-in page when it's been accessed anonymously. The following screenshot shows the Microsoft Entra sign-in page:
+When using this security configuration, a user opening the KRC GUI will be redirected to the Microsoft Entra sign-in page. After providing the correct Microsoft credentials, the user will be redirected to the KRC GUI. The following screenshot shows the Microsoft Entra sign-in page:
 
 image::application-login.png[,520,255]
 
@@ -618,7 +618,7 @@ image::application-login.png[,520,255]
 [[_encryptingpasswords]]
 == Encrypting Passwords in property files
 
-For security reasons we advise you to encrypt certain passwords or secret info after installation of KRC.
+For security reasons, we advise you to encrypt certain passwords or secret info after installation of KRC.
 
 Following properties may be encrypted:
 
@@ -628,7 +628,7 @@ Following properties may be encrypted:
 
 * the _spring.cloud.azure.active-directory.credential.client-secret_ in the _spring-aad-security.properties_ file
 
-The encrypted value can be obtained by using the _encrypt.bat_ (Windows) or _encrypt.sh_ command in the _KRC_HOME/appserver/apache-tomcat-${version}/bin_ directory.
+The encrypted value can be obtained by using the _encrypt.bat_ (Windows) or _encrypt.sh_ (Linux) command in the _KRC_HOME/appserver/apache-tomcat-${version}/bin_ directory.
 
 Open a command prompt or shell in this directory and type the following command:
 
@@ -637,7 +637,7 @@ Open a command prompt or shell in this directory and type the following command:
 encrypt -p <password> <value to encrypt>
 ----
 
-Replace in this command _password_ with the value of the _krc_encryption_password_ you have set in the _gradle.properties_ file during installation. Value to encrypt is the password or secret key you want to encrypt, e.g. _global_ in the case of the _spring.security.user.password_:
+Replace in this command _password_ with the value of the _krc_encryption_password_ you have set in the _gradle.properties_ file during installation. _value to encrypt_ is the password or secret key you want to encrypt, e.g. _global_ in the case of the _spring.security.user.password_:
 
 [source]
 ----
