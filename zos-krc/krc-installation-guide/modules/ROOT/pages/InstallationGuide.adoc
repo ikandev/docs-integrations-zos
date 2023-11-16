@@ -12,7 +12,7 @@ This document explains how to install the Kobee Resource Configurator (KRC).
 
 KRC is a web application to edit and generate models and resources that are part of the Kobee DevOps solution for z/OS mainframe. These models and resources will be used by the z/OS solution Phases running on a Kobee Agent. The models are JCL model templates and the resources are properties that will be used by the models to compile and promote sources and their results to the mainframe.
 
-image::Kobee-zos-architecture.png[,895,635] 
+image::Kobee-zos-architecture.png[,700,361] 
 
 
 It is recommended to install the Kobee Resource Configurator on the same host as the Kobee Agent that will run the z/OS Phases. This facilitates the export of the models and resources to the system that will use them. In most cases this will be on the same host as the Kobee Server, but this is not a strict requirement.
@@ -56,7 +56,7 @@ s|Min 100MB, recommended 250MB
 [[_bhbicaaj]]
 === Java 17
 
-KRC needs an installed Java JRE or JDK of version 17 or higher. It has been tested to run with Oracle Java, Adoptium Eclipse Temurin (formerly AdoptOpenJDK), Azul Zulu Builds of OpenJDK and OpenJDK on several Linux distros. Oracle Java can be obtained from Oracle's website for non-production environments using an Oracle account. Adoptium OpenJDK can be obtained from https://adoptium.net[https://adoptium.net,window=_blank] and Azul Zulu Builds of the OpenJDK from https://www.azul.com/downloads/?package=jdk[https://azul.com/downloads/?package=jdk,window=_blank].
+KRC needs an installed Java JDK of version 17 or higher. It has been tested to run with Oracle Java, Adoptium Eclipse Temurin (formerly AdoptOpenJDK), Azul Zulu Builds of OpenJDK and OpenJDK on several Linux distros. Oracle Java can be obtained from Oracle's website using an Oracle account. Adoptium OpenJDK can be obtained from https://adoptium.net[https://adoptium.net,window=_blank] and Azul Zulu Builds of the OpenJDK from https://www.azul.com/downloads/?package=jdk[https://azul.com/downloads/?package=jdk,window=_blank].
 
 === Database
 
@@ -195,7 +195,7 @@ It is recommended to launch the installer from a command prompt, Powershell or L
 *The user running the installer should have write access to the _KRC_HOME_ location.*
 ====
 
-image::installer_finished.png[,681,359]
+image::installer_finished.png[,982,512]
 
 When the installation succeeds, the _BUILD SUCCESSFUL_ message appears.
 
@@ -229,7 +229,7 @@ The KRC GUI can be reached by browsing to the url `\http://<hostname>:<krc_tomca
 The KRC Log in page will be displayed:
 
 
-image::krc_login.png[,520,255]
+image::krc_login.png[,526,377]
 
 Log in with user id "`global`", password "`global`". For information about the security configuration, see <<_securityconfiguration>>.
 
@@ -270,7 +270,7 @@ The uninstaller will keep the following folder containing the database backups :
 
 If this folder needs to be removed, it must be deleted manually after the uninstallation.
 
-image::uninstaller_finished.png[,983,494]
+image::uninstaller_finished.png[,1105,492]
 
 When the uninstallation succeeds, the _BUILD SUCCESSFUL_ message appears.
 
@@ -338,15 +338,15 @@ If you want to reconfigure a service, edit the file KRC_HOME/appserver/apache-to
 
 When the _krc_sudo_password_ provided in gradle.properties is correct, the KRC Daemon process for stopping and starting KRC is automatically registered in _systemd_ during installion or upgrade. If not, you can register the Linux daemon manually after installation/upgrade. 
 
-Make the _KRC_HOME/appserver/apache-tomcat-${version}/bin/krctomcat.service_ file executable.
+Make the _KRC_HOME/appserver/apache-tomcat-${version}/conf/krctomcat.service_ file executable.
 [source]
 ----
-chmod +x KRC_HOME/appserver/apache-tomcat-${version}/bin/krctomcat.service
+chmod +x KRC_HOME/appserver/apache-tomcat-${version}/conf/krctomcat.service
 ----
 Install the KRC service.
 [source]
 ----
-sudo systemctl -f enable KRC_HOME/appserver/apache-tomcat-${version}/bin/krctomcat.service
+sudo systemctl -f enable KRC_HOME/appserver/apache-tomcat-${version}/conf/krctomcat.service
 ----
 
 To start the KRC service, execute
@@ -391,7 +391,7 @@ The KRC installation contains configuration file examples for each security type
 
 The default KRC security type allows authentication with user and password. By default the user name is _global_ and its password _global_.
 
-image::krc_login.png[,520,255]
+image::krc_login.png[,526,377]
 
 This default security can be configured in the _KRC_HOME/appserver/apache-tomcat-${version}/webapps/krc/WEB-INF/classes/spring-default-security.properties_ file.
 
@@ -611,7 +611,7 @@ See also following article for more info about these Entra ID connection propert
 
 When using this security configuration, a user opening the KRC GUI will be redirected to the Microsoft Entra sign-in page. After providing the correct Microsoft credentials, the user will be redirected to the KRC GUI. The following screenshot shows the Microsoft Entra sign-in page:
 
-image::application-login.png[,520,255]
+image::application-login.png[,700,585]
 
 
 [appendix]
