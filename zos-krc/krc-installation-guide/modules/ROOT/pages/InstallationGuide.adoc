@@ -12,7 +12,7 @@ This document explains how to install the Kobee Resource Configurator (KRC).
 
 KRC is a web application to edit and generate models and resources that are part of the Kobee DevOps solution for z/OS mainframe. These models and resources will be used by the z/OS solution Phases running on a Kobee Agent. The models are JCL model templates and the resources are properties that will be used by the models to compile and promote sources and their results to the mainframe.
 
-image::Kobee-zos-architecture.png[,700,361] 
+image::kobee-zos-architecture.png[,700,361] 
 
 
 It is recommended to install the Kobee Resource Configurator on the same host as the Kobee Agent that will run the z/OS Phases. This facilitates the export of the models and resources to the system that will use them. In most cases this will be on the same host as the Kobee Server, but this is not a strict requirement.
